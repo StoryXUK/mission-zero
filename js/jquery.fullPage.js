@@ -109,7 +109,7 @@
             lockAnchors: false,
             navigation: true,
             navigationPosition: 'nav-position',
-            navigationTooltips: ['Home', 'About', 'Works', 'Contact'],
+            navigationTooltips: ['Home', 'About', 'Mission', 'Contact'],
             showActiveTooltip: true,
             slidesNavigation: false,
             slidesNavPosition: 'bottom',

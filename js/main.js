@@ -27,52 +27,52 @@ $(window).on('load', function () {
 
     $('.brand-logo, #fp-nav, .main-content, footer').addClass('before-loading');
 
-    setTimeout(function(){
-        
+    setTimeout(function () {
+
         $(".loader").addClass('loaded');
 
-    },2600);
+    }, 2600);
 
-    setTimeout(function(){
-        
+    setTimeout(function () {
+
         $("#loading").addClass('loaded');
 
-    },2800);
+    }, 2800);
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         $(".brand-logo").removeClass('before-loading').addClass('loaded');
 
-    },3000);
+    }, 3000);
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         $("#fp-nav, .main-content").removeClass('before-loading').addClass('loaded');
 
-    },3200);
+    }, 3200);
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         $("footer").removeClass('before-loading').addClass('loaded');
 
-    },3400);
+    }, 3400);
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         $("#loading").remove();
         $(".brand-logo, footer").addClass('after-load');
 
-    },3600);
+    }, 3600);
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         $("#fp-nav").addClass('notransition');
 
-    },4800);
+    }, 4800);
 
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     "use strict";
 
     /* ------------------------------------- */
@@ -92,7 +92,7 @@ $(document).ready(function(){
     /* 4. Menu button ...................... */
     /* ------------------------------------- */
 
-    $('#small-screen-menu').on( "click", function() {
+    $('#small-screen-menu').on("click", function () {
 
         $("#fullpage, #fp-nav, .brand-logo, footer").toggleClass("menu-opened");
         $("body, html").toggleClass("modal-open");
@@ -104,7 +104,7 @@ $(document).ready(function(){
     /* 5. Transition for nav & logo position */
     /* ------------------------------------- */
 
-    $(window).on("load resize", function() {
+    $(window).on("load resize", function () {
         if ($(this).width() < 1201) {
             $("#fp-nav").addClass("transition-desktop-mobile");
         }
@@ -117,11 +117,11 @@ $(document).ready(function(){
             $("#fp-nav").removeClass("transition-desktop-mobile");
         }
 
-        if ($(this).width() < 481) {   
-           $(".brand-logo").prependTo("#section0 .fp-tableCell");
+        if ($(this).width() < 481) {
+            $(".brand-logo").prependTo("#section0 .fp-tableCell");
         }
-        else {  
-           $(".brand-logo").prependTo("body");
+        else {
+            $(".brand-logo").prependTo("body");
         }
     });
 
@@ -129,25 +129,25 @@ $(document).ready(function(){
     /* 6. Text rotator on loading screen ... */
     /* ------------------------------------- */
 
-    function dataWord () {
+    function dataWord() {
 
-      $("[data-words]").attr("data-words", function(i, d){
-        var $self  = $(this),
-            $words = d.split("|"),
-            tot    = $words.length,
-            c      = 0; 
+        $("[data-words]").attr("data-words", function (i, d) {
+            var $self = $(this),
+                $words = d.split("|"),
+                tot = $words.length,
+                c = 0;
 
-        for(var loadtext=0; loadtext<tot; loadtext++) { $self.append($('<span/>',{text:$words[loadtext]}));}
+            for (var loadtext = 0; loadtext < tot; loadtext++) { $self.append($('<span/>', { text: $words[loadtext] })); }
 
-        $words = $self.find("span").hide();
+            $words = $self.find("span").hide();
 
-        (function loop(){
-          $self.animate({ width: $words.eq( c ).width() });
-          $words.stop().fadeOut().eq(c).fadeIn().delay(750).show(0, loop);
-          c = ++c % tot;
-        }());
-        
-      });
+            (function loop() {
+                $self.animate({ width: $words.eq(c).width() });
+                $words.stop().fadeOut().eq(c).fadeIn().delay(750).show(0, loop);
+                c = ++c % tot;
+            }());
+
+        });
 
     }
 
